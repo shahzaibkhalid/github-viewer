@@ -20,7 +20,7 @@
     </div>
     <h1>{{result.name}}</h1>
     <h2>{{result.login}}</h2>
-    <img class="avatar" src="{{result.avatar_url}}" alt="">
+    <img ng-show="showAfterFetch" class="avatar" ng-src="{{result.avatar_url}}" alt="avatar">
     <h3 class="bio">{{result.bio}}</h3>
     <h4>{{result.location}}</h4>
     <h4>{{result.blog}}</h4>
