@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="https://www.shahzaibkhalid.com/static/images/general-data/favicon.png">
+  <title>GitHub Viewer</title>
+</head>
+<body ng-app="App">
+  <h1 class="main-heading">GitHub Viewer</h1>
+  <h2 class="secondary-heading">Profile Stats, Instantly</h2>
+  <div ng-controller="githubData">
+    <div class="centering-input">
+      <input class="input" type="text" ng-model="query">
+      <button class="btn" ng-click="fetchData()">Find</button>
+    </div>
+    <h1>{{result.name}}</h1>
+    <h2>{{result.login}}</h2>
+    <img class="avatar" src="{{result.avatar_url}}" alt="">
+    <h3 class="bio">{{result.bio}}</h3>
+    <h4>{{result.location}}</h4>
+    <h4>{{result.blog}}</h4>
+    <h5>{{result.type}}</h5>
+    <h5 ng-show="showAfterFetch">Followers : {{result.followers}}</h5>
+    <h5 ng-show="showAfterFetch">Following : {{result.following}}</h5>
+    <h5 ng-show="showEmail">Email : {{result.email}}</h5>
+    <h5 ng-show="showCompany">Company : {{result.company}}</h5>
+    <h5 ng-show="showHireable">Hireable</h5>
+    <h5 ng-show="showAfterFetch">Public Repos : {{result.public_repos}}</h5>
+    <h5 ng-show="showAfterFetch">Public Gists : {{result.public_gists}} </h5>
+    <p class="centering-link"><a ng-show="showAfterFetch" class="full-profile" href="{{result.html_url}}" target="_blank">Full Profile</a></p>
+  </div>
+  <footer>
+      <p class="footer-personal">Designed &amp; coded by <a href="https://shahzaibkhalid.github.io" target="_blank">Shahzaib Khalid</a></p>
+      <p class="footer-code-license">GitHub Viewer is licensed under the
+      <a href="https://github.com/shahzaibkhalid/github-viewer/blob/master/LICENSE.txt" target="_blank"> MIT License.</a>
+      </p>
+  </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="./app.js"></script>
+</html>
